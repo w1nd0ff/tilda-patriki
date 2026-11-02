@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Тильда на Патриарших</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&display=swap">
+<style>
+/* Тильда: wine restaurant near Patriarshie — olive-grey walls, tall wooden wine cabinets, check-upholstered chairs, candlelit cocktails, a green veranda in the lane. Light olive single theme; signature = glass-by-mood wine picker from the real by-the-glass list. */
+:root{--bg:#ECEAE1;--panel:#F7F5EE;--fg:#24281F;--fg2:#33382D;--muted:#6E705F;--line:#D6D3C4;--acc:#5E6B47;--on-acc:#fff;--price:#7B2733;--wine:#7B2733;--display:"Old Standard TT",Georgia,serif;--body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--r:4px;--r-btn:4px;color-scheme:light}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.08;text-wrap:balance;overflow-wrap:anywhere}
+a{color:var(--link,var(--acc))}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.demo{background:var(--demo-bg,#000);color:var(--demo-fg,#bbb);font-size:13px}.demo .wrap{padding-block:7px}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-block:16px}
+.logo{font-family:var(--display);font-size:30px;line-height:1}
+.logo small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.pill{text-decoration:none;font-weight:700;padding:10px 18px;border-radius:var(--r-btn,999px);background:var(--acc);color:var(--on-acc,#fff);font-variant-numeric:tabular-nums}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px;align-items:center;padding-block:34px 60px}
+.kick{color:var(--acc);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:12px}
+.hero h1{font-size:clamp(36px,6.2vw,76px);margin-top:12px}
+.hero p.lead{font-size:19px;max-width:31em;margin:16px 0 0;color:var(--fg2,var(--fg))}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{font:inherit;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:var(--r-btn,999px);border:2px solid var(--acc);color:var(--acc);background:none;cursor:pointer}
+.btn.solid{background:var(--acc);color:var(--on-acc,#fff)}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:24px}
+.facts b{display:block;font-family:var(--display);font-size:30px;font-variant-numeric:tabular-nums;line-height:1.1}
+.facts span{font-size:13px;color:var(--muted)}
+.decor{justify-self:center;width:100%;max-width:440px}
+.decor svg{width:100%;height:auto;display:block}
+section.s{padding-block:60px;border-top:1px solid var(--line)}
+section.s h2{font-size:clamp(30px,4.8vw,52px)}
+.sub{color:var(--muted);margin:10px 0 0;max-width:42em}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r,14px);padding:22px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.tabs button{font:inherit;font-weight:600;font-size:15px;padding:9px 16px;border-radius:var(--r-btn,999px);border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:var(--on-acc,#fff)}
+.menu{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 40px}
+.menu li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.menu .n{font-weight:600}.menu .p{font-family:var(--display);font-size:20px;color:var(--price,var(--acc));font-variant-numeric:tabular-nums;white-space:nowrap}
+.menu .d{grid-column:1/-1;font-size:14px;color:var(--muted)}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.quotes blockquote{margin:0}
+.quotes cite{display:block;margin-top:10px;font-style:normal;color:var(--muted);font-size:14px}
+.contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chips a{text-decoration:none;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px}
+.hint{font-size:14px;color:var(--muted)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.step{display:flex;align-items:center;gap:10px}
+.step button{width:36px;height:36px;border-radius:50%;border:2px solid var(--acc);background:none;color:var(--acc);font-size:20px;font-weight:700;cursor:pointer;flex:none}
+.step output{min-width:2ch;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.total{font-family:var(--display);font-size:40px;color:var(--acc);font-variant-numeric:tabular-nums}
+.two{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px;margin-top:24px;align-items:start}
+footer{padding-block:26px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:820px){.hero .wrap,.two{grid-template-columns:minmax(0,1fr)}.menu,.quotes,.contacts{grid-template-columns:minmax(0,1fr)}.decor{max-width:340px}}
+
+.demo{--demo-bg:#24281F}
+.hero h1 em{color:var(--wine)}
+.check{height:16px;background:repeating-linear-gradient(90deg,rgba(94,107,71,.6) 0 8px,transparent 8px 16px),repeating-linear-gradient(0deg,rgba(123,39,51,.45) 0 8px,#E4DFCF 8px 16px)}
+.moods{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.moods button{font:inherit;padding:10px 16px;border-radius:4px;border:1px solid var(--acc);background:transparent;color:var(--acc);cursor:pointer;font-weight:600}
+.moods button[aria-pressed="true"]{background:var(--acc);color:#fff}
+.glass{display:grid;grid-template-columns:90px minmax(0,1fr);gap:20px;align-items:center;margin-top:18px}
+.glass svg{width:90px}
+.glass h3{font-size:28px}
+.glass .pr{font-family:var(--display);font-size:30px;color:var(--wine)}
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<div class="demo"><div class="wrap">Демо-версия сайта · сделано на основе карточки заведения на Яндекс Картах</div></div>
+<header class="top"><div class="wrap">
+  <div class="logo">Тильда<small>ресторан · вино · Патриаршие</small></div>
+  <a class="pill" href="tel:+79164027049">+7 916 402-70-49</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="kick">Большой Палашёвский, 14 · Патриаршие пруды</div>
+    <h1>Бокал, свеча и <em>Патриаршие</em> за углом</h1>
+    <p class="lead">Камерный ресторан с винными шкафами до потолка, клетчатыми креслами и верандой в зелени переулка. Завтраки с утра — яйца Бенедикт, драники, скрэмбл, — вечером утка конфи, треска арабьятта и бокал из длинной карты.</p>
+    <div class="cta"><a class="btn solid" href="#wine">Подобрать бокал</a><a class="btn" href="#menu">Меню</a></div>
+    <div class="facts"><div><b>4,9</b><span>2 244 оценки</span></div><div><b>10–00</b><span>ежедневно</span></div><div><b>от 1 500 ₽</b><span>средний чек</span></div></div>
+  </div>
+  <div class="decor" aria-hidden="true"><svg viewBox="0 0 400 420"><rect x="40" y="20" width="150" height="390" fill="#8A6A45"/><rect x="210" y="20" width="150" height="390" fill="#8A6A45"/>
+<g id="racks"></g><rect x="40" y="20" width="150" height="390" fill="none" stroke="#5A4329" stroke-width="8"/><rect x="210" y="20" width="150" height="390" fill="none" stroke="#5A4329" stroke-width="8"/>
+<path d="M200 300c-14 0-22 10-22 26 0 14 10 24 22 26v40h-16v6h38v-6h-16v-40c12-2 22-12 22-26 0-16-8-26-22-26z" fill="#F7F5EE" stroke="#24281F" stroke-width="2"/><path d="M180 322h40c0 12-8 22-20 22s-20-10-20-22z" fill="#7B2733"/></svg></div>
+</div></section>
+
+<div class="check" aria-hidden="true"></div>
+<section class="s" id="wine" style="border-top:0"><div class="wrap two" style="margin-top:0">
+  <div><div class="kick">Вино по бокалам</div><h2>Какое у вас настроение?</h2><p class="sub">Выберите — и мы подскажем бокал из нашей карты. Сомелье в зале поможет с остальным.</p>
+  <div class="moods" id="moods"></div></div>
+  <div class="card glass"><svg viewBox="0 0 60 120"><path d="M30 10c-14 0-22 12-22 30 0 16 10 28 22 30v36h-12v6h24v-6H30V70c12-2 22-14 22-30 0-18-8-30-22-30z" fill="none" stroke="#24281F" stroke-width="2.5"/><path id="wFill" d="M10 38h40c0 16-9 28-20 28S10 54 10 38z" fill="#7B2733"/></svg>
+  <div><h3 id="wName"></h3><p class="hint" id="wDesc" style="margin:6px 0"></p><div class="pr" id="wPrice"></div></div></div>
+</div></section>
+<section class="s" id="menu"><div class="wrap">
+  <div class="kick">Меню</div>
+  <h2>Меню и цены</h2>
+  <p class="sub">Цены из меню заведения.</p>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Разделы меню"></div>
+  <ul class="menu" id="menuList"></ul>
+</div></section>
+
+<section class="s"><div class="wrap">
+  <div class="kick">Отзывы гостей</div>
+  <h2>Что говорят гости</h2>
+  <div class="quotes"><blockquote class="card">«Камерная атмосфера: кажется, что каждая деталь интерьера продумана с любовью. Мягкое освещение и стильный декор.»<cite>Гостья, Яндекс Карты</cite></blockquote><blockquote class="card">«Были с сыном 8 марта — угостили коктейлем. Внимательная официантка помогла с выбором блюд.»<cite>Гостья, Яндекс Карты</cite></blockquote><blockquote class="card">«Сытная и очень вкусная еда, красивая подача. Отдельное спасибо за нежное поздравление с днём рождения.»<cite>Гость, Яндекс Карты</cite></blockquote></div>
+</div></section>
+
+<section class="s" id="contacts"><div class="wrap">
+  <h2>Как нас найти</h2>
+  <div class="contacts">
+    <div class="card"><b>Адрес</b><br>Москва, Большой Палашёвский пер., 14/7, стр. 3<br><span class="hint">м. Пушкинская · веранда</span></div>
+    <div class="card"><b>Часы работы</b><br>Ежедневно 10:00–00:00<br><span class="hint" id="openNow"></span></div>
+    <div class="card"><b>Связаться</b><br><a href="tel:+79164027049">+7 916 402-70-49</a><div class="chips"><a href="https://wa.me/79164027049" target="_blank" rel="noopener">WhatsApp</a><a href="https://yandex.ru/maps/org/tilda/102099792398/" target="_blank" rel="noopener">Маршрут</a></div></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© Тильда · Демо-версия сайта · Чрезмерное употребление алкоголя вредит вашему здоровью. 18+</div></footer>
+
+<script>
+var OPEN=[600, 0];
+var MENU={"Завтраки": [["Яйца Бенедикт с лососем", 1150, "классика завтраков на Патриарших"], ["Скрэмбл, лосось, авокадо", 1240, ""], ["Скрэмбл, томаты, базилик", 670, ""], ["Жареный картофель, скрэмбл, лесные грибы", 950, ""]], "Закуски": [["Тартар Баттута", 990, "пьемонтский тартар"], ["Парижский тартар", 990, ""], ["Узбекские томаты, таджасские оливки, каперсы", 990, ""], ["Хлеб, оливковое масло, бальзамик", 370, "хлеб собственной выпечки"], ["Жареные артишоки, рикотта, гремолата", 890, ""], ["Запечённый камамбер", 0, "целиком, до жидкой сердцевины"]], "Основные": [["Треска, соус арабьятта, таджасские оливки", 1620, "новинка"], ["Утиная ножка конфи, полента, яблочный жу", 1470, ""], ["Куриный шницель «Цезарь»", 1370, ""], ["Жареный картофель с лесными грибами", 950, ""]], "Десерты": [["Тарт татен с инжиром, шантильи", 590, ""], ["Шоколадный мусс, сезонные ягоды", 590, ""], ["Игристый чай: эрл грей, персик, лайм", 450, "0,3 л"]]};
+
+(function(){
+var tabs=document.getElementById('tabs'),list=document.getElementById('menuList');
+if(tabs&&typeof MENU!=='undefined'){
+ function show(c,btn){tabs.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-selected','false')});btn.setAttribute('aria-selected','true');list.innerHTML='';
+  MENU[c].forEach(function(d){var li=document.createElement('li');[['n',d[0]],['p',d[1]?d[1].toLocaleString('ru-RU')+' ₽':''],['d',d[2]||'']].forEach(function(s){if(!s[1])return;var e=document.createElement('span');e.className=s[0];e.textContent=s[1];li.appendChild(e)});list.appendChild(li)})}
+ Object.keys(MENU).forEach(function(c,i){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=c;b.addEventListener('click',function(){show(c,b)});tabs.appendChild(b);if(i===0)show(c,b)});
+}
+var el=document.getElementById('openNow');
+if(el){try{var d=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Moscow'}));var m=d.getHours()*60+d.getMinutes();var o=OPEN[0],c=OPEN[1];var open=c>o?(m>=o&&m<c):(m>=o||m<c);
+ el.textContent=open?'Сейчас открыто':'Сейчас закрыто — откроемся в '+String(Math.floor(o/60)).padStart(2,'0')+':'+String(o%60).padStart(2,'0')}catch(e){}}
+})();
+
+(function(){var r=document.getElementById('racks'),h='';for(var c=0;c<2;c++)for(var y=0;y<11;y++)for(var x=0;x<4;x++)h+='<circle cx="'+(66+c*170+x*33)+'" cy="'+(48+y*34)+'" r="11" fill="'+(((x+y+c)%3)?'#2F3A28':'#6E1E2A')+'"/>';r.innerHTML=h;
+var M={'Легко и свежо':['Spätburgunder Klaus Meyer \'22','Немецкий пино нуар: вишня, лёгкость и прозрачная кислотность. Пфальц.',950,'#9C3343'],'Сочно и мягко':['Garnacha «Besos y Lagrimas» \'21','Испанская гарнача с сочной ягодой и мягкими танинами. Кариньена.',850,'#8A2A3A'],'Тоскана':['Sangiovese Tenuta del Ghiottone','Тосканское санджовезе: вишня, травы и живая кислотность.',750,'#7B2733'],'Посмелее':['Malbec Hector Durigutti «HD» \'22','Аргентинский мальбек из Мендосы — плотный и тёмный.',1390,'#5A1622'],'Классика':['Tempranillo «Mitarte» Crianza \'21','Классическая риоха крианса с ванилью и выдержкой.',1290,'#6A1E2B'],'Особый вечер':['Château Castera \'15','Выдержанное бордо из Медока урожая 2015 года.',1450,'#4A1019']},box=document.getElementById('moods');
+Object.keys(M).forEach(function(k,i){var b=document.createElement('button');b.type='button';b.textContent=k;b.onclick=function(){box.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');document.getElementById('wName').textContent=M[k][0];document.getElementById('wDesc').textContent=M[k][1];document.getElementById('wPrice').textContent=M[k][2].toLocaleString('ru-RU')+' ₽ / бокал';document.getElementById('wFill').setAttribute('fill',M[k][3])};box.appendChild(b);if(!i)b.click()})})();
+
+</script>
+
+</body>
+</html>
